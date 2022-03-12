@@ -1,0 +1,6 @@
+REGISTRO: 
+		[Nombre -->]dav
+		[DNI -->]12345678K
+		[Teléfono -->]23432
+		[Email -->]@
+		[Habitación -->]Matrimonio
