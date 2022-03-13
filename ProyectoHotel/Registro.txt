@@ -1,0 +1,9 @@
+
+REGISTRO: 
+		[Nombre -->] David
+		[DNI -->] 12345688K
+		[Teléfono -->] 2423234
+		[Email -->] d@gmail.com
+		[Habitación -->] Familiar
+		[Fecha del registro-->] 13-03-2022
+		[Estancia -->] 3
