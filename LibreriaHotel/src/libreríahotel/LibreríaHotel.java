@@ -3,6 +3,7 @@ package libreríahotel;
 
 import java.awt.Desktop;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -43,6 +44,12 @@ public class LibreríaHotel {
 
     }
     
+//    public static int NumRegistro(String archivo, String cadena){
+//        File file = new File(archivo);
+//        
+//        
+//    }
+    
     public static int BuscarCadena (String archivo, String cadena){
         File file=new File(archivo);
         int lineasTotales=0;
@@ -75,6 +82,38 @@ public class LibreríaHotel {
         return lineasTotales;
     }
     
-//    public static void Borrado()
-//    
+    public static void Archivar (String archivo,int lineasT) {
+        File file=new File(archivo);
+        int lineasArch=0;
+        int lineasI=lineasT-2;
+        int lineasF=lineasT-5;
+        try{
+            if (file.exists()){
+                BufferedReader leer = new BufferedReader(new FileReader(archivo));
+                BufferedWriter archiva = new BufferedWriter(new FileWriter("Registros_Antigüos.txt",true));
+                String lineas;
+                while ((lineas=leer.readLine())!=null){
+                    System.out.println(lineas);
+                lineasArch++;
+            }
+                
+                
+                while ((lineas=leer.readLine())!=null){
+                while(lineasArch>=lineasI && lineasArch<=lineasF){
+                    String copiar=leer.readLine();
+                    archiva.write(copiar);
+                    System.out.println(copiar);
+                }
+        }
+                
+                archiva.close();
+                leer.close();
+            }
+        }
+        catch(Exception ex){
+            
+        }
+    }
+    
+ 
 }
