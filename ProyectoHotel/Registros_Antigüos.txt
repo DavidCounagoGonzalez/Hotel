@@ -1,0 +1,9 @@
+
+REGISTRO: 
+		[Nombre -->] David
+		[DNI -->] 12345688K
+		[Teléfono -->] 2342342
+		[Email -->] @gmail
+		[Habitación -->] Doble
+		[Fecha del registro-->] 14-03-2022
+		[Estancia -->] 3 días 

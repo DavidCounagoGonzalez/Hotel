@@ -1,9 +1,43 @@
-
 REGISTRO: 
 		[Nombre -->] David
 		[DNI -->] 12345688K
-		[Teléfono -->] 2423234
-		[Email -->] d@gmail.com
+		[Teléfono -->] 2342342
+		[Email -->] @gmail
+		[Habitación -->] Doble
+		[Fecha del registro-->] 14-03-2022
+		[Estancia -->] 3 días 
+REGISTRO: 
+		[Nombre -->] Juan
+		[DNI -->] 12345678K
+		[Teléfono -->] 23423423
+		[Email -->] @hotmail
 		[Habitación -->] Familiar
-		[Fecha del registro-->] 13-03-2022
-		[Estancia -->] 3
+		[Fecha del registro-->] 14-03-2022
+		[Estancia -->] 2 días 
+
+REGISTRO: 
+		[Nombre -->] Pepe
+		[DNI -->] 87654321K
+		[Teléfono -->] 123456789
+		[Email -->] pepe@gmail.com
+		[Habitación -->] Doble
+		[Fecha del registro-->] 14-03-2022
+		[Estancia -->] 4 días 
+
+REGISTRO: 
+		[Nombre -->] Juan
+		[DNI -->] 12345678K
+		[Teléfono -->] 23423423
+		[Email -->] @hotmail
+		[Habitación -->] Familiar
+		[Fecha del registro-->] 14-03-2022
+		[Estancia -->] 2 días 
+
+REGISTRO: 
+		[Nombre -->] Pepe
+		[DNI -->] 87654321K
+		[Teléfono -->] 123456789
+		[Email -->] pepe@gmail.com
+		[Habitación -->] Doble
+		[Fecha del registro-->] 14-03-2022
+		[Estancia -->] 4 días 

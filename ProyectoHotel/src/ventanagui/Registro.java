@@ -72,7 +72,7 @@ public class Registro extends javax.swing.JFrame {
         Doble = new javax.swing.JRadioButton();
         Familiar = new javax.swing.JRadioButton();
         Matrimonio = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        BotonRegistrar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
         Estancia = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -134,10 +134,10 @@ public class Registro extends javax.swing.JFrame {
         Habitacion.add(Matrimonio);
         Matrimonio.setText("Matrimonio");
 
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonRegistrar.setText("Registrar");
+        BotonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonRegistrarActionPerformed(evt);
             }
         });
 
@@ -196,7 +196,7 @@ public class Registro extends javax.swing.JFrame {
                                     .addComponent(jLabel2)))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(97, 97, 97)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
                         .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -235,7 +235,7 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
@@ -392,7 +392,7 @@ public class Registro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Telf_campoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
         Date fecha = new Date();
         
         String compDni=DNI_campo.getText();
@@ -441,14 +441,17 @@ public class Registro extends javax.swing.JFrame {
                         writer.write("\t\t[Email -->] "+lista[3]+"\n");
                         writer.write("\t\t[Habitación -->] "+lista[4]+"\n");
                         writer.write("\t\t[Fecha del registro-->] "+new SimpleDateFormat("dd-MM-yyyy").format(fecha)+"\n");
-                        writer.write("\t\t[Estancia -->] "+lista[5]+"\n");
+                        writer.write("\t\t[Estancia -->] "+lista[5]+" días \n");
                         writer.close();
                         
 
                     } catch (IOException ex) {
                         
                     }
-            
+            //Tras que se halla implementado correctamente los datos en el archivo se vuelve al inicio.
+            Inicio goInic = new Inicio();
+            goInic.setVisible(true);
+            this.setVisible(false);
                 
                 }
                 else{
@@ -463,14 +466,11 @@ public class Registro extends javax.swing.JFrame {
         else{
             System.out.println("El DNI tiene "+compDni.length()+" caracteres, ha de tener 9 \n Revise sus datos.");
         }
-        //Tras que se halla implementado correctamente los datos en el archivo se vuelve al inicio.
-            Inicio goInic = new Inicio();
-            goInic.setVisible(true);
-            this.setVisible(false);
         
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_BotonRegistrarActionPerformed
 //El botón cancelar nos devuelve al inicio sin realizar ninguna acción. 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         Inicio goInic = new Inicio();
@@ -518,6 +518,7 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonRegistrar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JLabel Cerrar;
     private javax.swing.JTextField Correo_campo;
@@ -537,7 +538,6 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField Telf_campo;
     private javax.swing.JLabel Telf_label;
     private javax.swing.JPanel Titulo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

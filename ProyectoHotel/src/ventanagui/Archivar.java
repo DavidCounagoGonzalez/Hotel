@@ -271,7 +271,7 @@ public class Archivar extends javax.swing.JFrame {
         }
         else{
            int linea= LibreríaHotel.BuscarCadena("Registro.txt", DNI_campo.getText());
-           
+            System.out.println(linea);
             LibreríaHotel.Archivar("Registro.txt", linea);
             
         }

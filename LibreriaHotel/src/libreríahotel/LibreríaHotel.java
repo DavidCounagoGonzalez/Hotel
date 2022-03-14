@@ -5,11 +5,10 @@ import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 
 public class LibreríaHotel {
 
@@ -44,15 +43,12 @@ public class LibreríaHotel {
 
     }
     
-//    public static int NumRegistro(String archivo, String cadena){
-//        File file = new File(archivo);
-//        
-//        
-//    }
+
     
     public static int BuscarCadena (String archivo, String cadena){
         File file=new File(archivo);
         int lineasTotales=0;
+        int lineaCadena = 0;
         try{
             // comprobar la existencia del Archivo
         if(file.exists()){
@@ -70,7 +66,7 @@ public class LibreríaHotel {
                 for (int i=0;i<palabras.length;i++)
                     if(palabras[i].equals(cadena)){
                         System.out.println(lineasTotales);
-                        
+                        lineaCadena=lineasTotales;
                     }
             }
         }
@@ -79,33 +75,41 @@ public class LibreríaHotel {
              System.out.println(e.getMessage());
          }  
         
-        return lineasTotales;
+        return lineaCadena;
     }
     
     public static void Archivar (String archivo,int lineasT) {
         File file=new File(archivo);
         int lineasArch=0;
-        int lineasI=lineasT-2;
+        int lineasI=lineasT+4;
+        System.out.println(lineasI);
         int lineasF=lineasT-5;
+        System.out.println(lineasF);
         try{
             if (file.exists()){
                 BufferedReader leer = new BufferedReader(new FileReader(archivo));
                 BufferedWriter archiva = new BufferedWriter(new FileWriter("Registros_Antigüos.txt",true));
+                BufferedWriter borra = new BufferedWriter(new FileWriter(archivo,true));
+                
                 String lineas;
                 while ((lineas=leer.readLine())!=null){
+                    
+                
+            
+                
+                if(lineasArch<=lineasI && lineasArch>=lineasF){
+                     
+                    archiva.write("\n"+lineas);
                     System.out.println(lineas);
-                lineasArch++;
-            }
-                
-                
-                while ((lineas=leer.readLine())!=null){
-                while(lineasArch>=lineasI && lineasArch<=lineasF){
-                    String copiar=leer.readLine();
-                    archiva.write(copiar);
-                    System.out.println(copiar);
+                    
                 }
-        }
-                
+                else{
+                    borra.write("\n"+lineas);
+                }
+                    
+                lineasArch++;
+                }
+                borra.close();
                 archiva.close();
                 leer.close();
             }
